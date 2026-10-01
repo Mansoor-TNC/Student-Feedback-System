@@ -1,4 +1,4 @@
 <?php
-    require "db.php";
-    echo "Database Created";
+    header("Location: login.php");
+    exit();
 ?>
