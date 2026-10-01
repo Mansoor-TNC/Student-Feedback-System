@@ -72,7 +72,7 @@ if (!isset($_SESSION["reg_no"])) {
 
     <label>Comments:</label>
     <br>
-    <textarea name="comments" placeholder="Enter NIL if there is no comments about the Faculty" rows="5" cols="40"></textarea>
+    <textarea name="comments" placeholder="Enter NIL if there is no comments about the Faculty" rows="5" cols="40" required></textarea>
 
     <br><br>
 

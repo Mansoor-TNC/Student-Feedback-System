@@ -48,6 +48,8 @@ if (mysqli_stmt_execute($stmt)) {
 
     echo "Feedback submitted successfully!<br>";
     echo "Your overall rating: " . $overall;
+    header("Location: view_feedback.php");
+    exit();
 
 } else {
 
