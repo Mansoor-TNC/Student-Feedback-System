@@ -83,7 +83,10 @@ if ($message != "") {
 
     <br><br>
 
-    <input type="submit" value="Login">
+    <input type="submit" value="Login"><br><br>
+    <a style = "font-size:15px" href="sign_up.php">
+        Dont have an Account ?
+    </a>
 </form>
 </div>
 </div>

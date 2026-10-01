@@ -13,7 +13,7 @@ $reg_no = $_SESSION["reg_no"];
 
 $result = mysqli_query(
     $conn,
-    "SELECT teaching_rating, clarity_rating, material_rating,
+    "SELECT subject, faculty, teaching_rating, clarity_rating, material_rating,
             interaction_rating, overall_rating, comments, created_at
      FROM feedback
      WHERE reg_no = $reg_no
@@ -45,6 +45,11 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
 
         echo '<div class="feedback-card">';
+
+        echo "<p><strong>Subject:</strong> "
+            . htmlspecialchars($row["subject"]) . "</p>";
+        echo "<p><strong>Faculty:</strong> "
+            . htmlspecialchars($row["faculty"]) . "</p>";
 
         echo "<p><strong>Teaching Quality:</strong> "
             . $row["teaching_rating"] . "</p>";

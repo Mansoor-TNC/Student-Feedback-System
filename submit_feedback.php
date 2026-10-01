@@ -16,6 +16,8 @@ $clarity = $_POST["clarity_rating"];
 $material = $_POST["material_rating"];
 $interaction = $_POST["interaction_rating"];
 $comments = $_POST["comments"];
+$subject = $_POST["subject"];
+$faculty = $_POST["faculty"];
 
 $overall = (
     $teaching +
@@ -27,15 +29,17 @@ $overall = (
 $stmt = mysqli_prepare(
     $conn,
     "INSERT INTO feedback
-    (reg_no, teaching_rating, clarity_rating, material_rating,
+    (reg_no, subject, faculty, teaching_rating, clarity_rating, material_rating,
      interaction_rating, overall_rating, comments)
-    VALUES (?, ?, ?, ?, ?, ?, ?)"
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
 );
 
 mysqli_stmt_bind_param(
     $stmt,
-    "siiiids",
+    "sssiiiids",
     $reg_no,
+    $subject,
+    $faculty,
     $teaching,
     $clarity,
     $material,
@@ -52,6 +56,8 @@ if (mysqli_stmt_execute($stmt)) {
         "              FEEDBACK\n" .
         "========================================\n" .
         "Register Number: " . $reg_no . "\n" .
+        "Subject: " . $subject . "\n" .
+        "Faculty: " . $faculty . "\n" .
         "Teaching Quality: " . $teaching . "\n" .
         "Clarity: " . $clarity . "\n" .
         "Course Material: " . $material . "\n" .

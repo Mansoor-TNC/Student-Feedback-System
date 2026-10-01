@@ -11,3 +11,31 @@ Comments: nil
 Submitted: 2026-10-01 23:04:26
 ========================================
 
+========================================
+              FEEDBACK
+========================================
+Register Number: 8001
+Teaching Quality: 3
+Clarity: 4
+Course Material: 5
+Interaction: 4
+Overall Rating: 4
+Comments: nil
+Submitted: 2026-10-02 00:38:00
+========================================
+
+========================================
+              FEEDBACK
+========================================
+Register Number: 8037
+Subject: Database Management
+Faculty: ashraf ali
+Teaching Quality: 5
+Clarity: 3
+Course Material: 5
+Interaction: 5
+Overall Rating: 4.5
+Comments: nil
+Submitted: 2026-10-02 01:05:04
+========================================
+
