@@ -70,8 +70,14 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-
 ?>
+<br>
+
+<a href="feedback.php">Submit New Feedback</a>
+
+<br><br>
+
+<a href="logout.php">Logout</a>
 
 </body>
 </html>
