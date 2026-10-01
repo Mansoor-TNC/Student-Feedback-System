@@ -7,10 +7,15 @@ if (!isset($_SESSION["reg_no"])) {
     exit();
 }
 
+require "db.php";
+
+$reg_no = $_SESSION["reg_no"];
+
 $teaching = $_POST["teaching_rating"];
 $clarity = $_POST["clarity_rating"];
 $material = $_POST["material_rating"];
 $interaction = $_POST["interaction_rating"];
+$comments = $_POST["comments"];
 
 $overall = (
     $teaching +
@@ -19,11 +24,38 @@ $overall = (
     $interaction
 ) / 4;
 
-echo "Teaching Rating: " . $teaching . "<br>";
-echo "Clarity Rating: " . $clarity . "<br>";
-echo "Material Rating: " . $material . "<br>";
-echo "Interaction Rating: " . $interaction . "<br>";
+$stmt = mysqli_prepare(
+    $conn,
+    "INSERT INTO feedback
+    (reg_no, teaching_rating, clarity_rating, material_rating,
+     interaction_rating, overall_rating, comments)
+    VALUES (?, ?, ?, ?, ?, ?, ?)"
+);
 
-echo "Overall Rating: " . $overall;
+mysqli_stmt_bind_param(
+    $stmt,
+    "siiiids",
+    $reg_no,
+    $teaching,
+    $clarity,
+    $material,
+    $interaction,
+    $overall,
+    $comments
+);
+
+if (mysqli_stmt_execute($stmt)) {
+
+    echo "Feedback submitted successfully!<br>";
+    echo "Your overall rating: " . $overall;
+
+} else {
+
+    echo "Error: " . mysqli_error($conn);
+
+}
+
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
 
 ?>
