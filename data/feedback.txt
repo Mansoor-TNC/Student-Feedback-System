@@ -1,41 +1,15 @@
 ========================================
               FEEDBACK
 ========================================
-Register Number: 8001
-Teaching Quality: 3
-Clarity: 3
-Course Material: 4
-Interaction: 5
-Overall Rating: 3.75
-Comments: nil
-Submitted: 2026-10-01 23:04:26
-========================================
-
-========================================
-              FEEDBACK
-========================================
-Register Number: 8001
-Teaching Quality: 3
+Register Number: 8037
+Subject: php
+Faculty: Sakthivel
+Teaching Quality: 4
 Clarity: 4
-Course Material: 5
+Course Material: 4
 Interaction: 4
 Overall Rating: 4
 Comments: nil
-Submitted: 2026-10-02 00:38:00
-========================================
-
-========================================
-              FEEDBACK
-========================================
-Register Number: 8037
-Subject: Database Management
-Faculty: ashraf ali
-Teaching Quality: 5
-Clarity: 3
-Course Material: 5
-Interaction: 5
-Overall Rating: 4.5
-Comments: nil
-Submitted: 2026-10-02 01:05:04
+Submitted: 2026-10-02 01:29:59
 ========================================
 

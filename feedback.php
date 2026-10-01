@@ -39,7 +39,7 @@ if (!isset($_SESSION["reg_no"])) {
 
     <select name="subject" id="subject" required>
         <option value="">Select a subject</option>
-        <option value="php">PHP</option>
+        <option value="PHP">PHP</option>
         <option value="Database Management">Database Management Systems</option>
         <option value="Cloud Computing">Cloud Computing</option>
         <option value="Python">Python</option>
