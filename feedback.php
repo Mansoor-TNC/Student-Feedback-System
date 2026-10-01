@@ -12,16 +12,29 @@ if (!isset($_SESSION["reg_no"])) {
 <html>
 <head>
     <title>Student Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<div class="container">
+<div class="navigation">
+    <a href="view_feedback.php" class="button">
+        My Feedback
+    </a>
 
-<h2>Student Feedback Form</h2>
+    <a href="logout.php" class="button">
+        Logout
+    </a>
+</div>
 
-<p>Welcome <?php echo strtoupper($_SESSION["name"]); ?></p>
+<div class="card">
+
+<h2 style="text-align:center">Student Feedback Form</h2>
+
 
 <form action="submit_feedback.php" method="post">
 
+    <div class="form-group">
     <label>Teaching Quality:</label>
     <select name="teaching_rating" required>
         <option value="">Select Rating</option>
@@ -31,9 +44,11 @@ if (!isset($_SESSION["reg_no"])) {
         <option value="4">4 - Good</option>
         <option value="5">5 - Excellent</option>
     </select>
+    </div>
 
     <br><br>
 
+    <div class="form-group">
     <label>Clarity of Explanation:</label>
     <select name="clarity_rating" required>
         <option value="">Select Rating</option>
@@ -43,9 +58,11 @@ if (!isset($_SESSION["reg_no"])) {
         <option value="4">4 - Good</option>
         <option value="5">5 - Excellent</option>
     </select>
+    </div>
 
     <br><br>
 
+    <div class="form-group">
     <label>Course Material:</label>
     <select name="material_rating" required>
         <option value="">Select Rating</option>
@@ -55,9 +72,11 @@ if (!isset($_SESSION["reg_no"])) {
         <option value="4">4 - Good</option>
         <option value="5">5 - Excellent</option>
     </select>
+    </div>
 
     <br><br>
 
+    <div class="form-group">
     <label>Student Interaction:</label>
     <select name="interaction_rating" required>
         <option value="">Select Rating</option>
@@ -67,18 +86,24 @@ if (!isset($_SESSION["reg_no"])) {
         <option value="4">Good</option>
         <option value="5">Excellent</option>
     </select>
+    </div>
 
     <br><br>
 
+    <div class="form-group">
     <label>Comments:</label>
     <br>
     <textarea name="comments" placeholder="Enter NIL if there is no comments about the Faculty" rows="5" cols="40" required></textarea>
 
     <br><br>
+    </div>
 
     <input type="submit" value="Submit Feedback">
 
 </form>
+
+</div>
+</div>
 
 </body>
 </html>

@@ -52,33 +52,41 @@ mysqli_close($conn);
 <html>
 <head>
     <title>Student Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<div class="container">
+<div class="card">
 
-<h2>Student Login</h2>
+<h2 style = "text-align:center">Student Login</h2>
 
 <?php
 if ($message != "") {
-    echo "<p>$message</p>";
+    echo '<p class="message">'.htmlspecialchars($message).'</p>';
 }
 ?>
 
 <form method="post">
-
-    Register Number:
-    <input type="text" name="reg_no" required>
-
+    <div class="form-group">
+        <label>Register Number:</label>
+        <input type="text" name="reg_no" required>
+    </div>
     <br><br>
 
-    Password:
-    <input type="password" name="password" required>
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password" name="password" required>
+    </div>
+    
+    
 
     <br><br>
 
     <input type="submit" value="Login">
-
 </form>
+</div>
+</div>
 
 </body>
 </html>

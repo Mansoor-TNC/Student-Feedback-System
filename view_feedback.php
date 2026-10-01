@@ -27,11 +27,16 @@ $result = mysqli_query(
 
 <head>
     <title>My Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-<h2>My Submitted Feedback</h2>
+<div class="container" style="max-width:1000px">
+    <div class="navigation">
+    <a href="logout.php" class="button" style = "margin-left: auto">Logout</a>
+    </div>
+<div class="card">
+<h2 style = "text-align:center">My Submitted Feedback</h2>
 
 <?php
 
@@ -39,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
 
     while ($row = mysqli_fetch_assoc($result)) {
 
-        echo "<hr>";
+        echo '<div class="feedback-card">';
 
         echo "<p><strong>Teaching Quality:</strong> "
             . $row["teaching_rating"] . "</p>";
@@ -61,6 +66,8 @@ if (mysqli_num_rows($result) > 0) {
 
         echo "<p><strong>Submitted:</strong> "
             . $row["created_at"] . "</p>";
+
+        echo '</div>';
     }
 
 } else {
@@ -72,16 +79,12 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
 <br>
+<div class="navigation">
+<a href="feedback.php" class="button">Submit New Feedback</a>
 
-<a href="feedback.php">Submit New Feedback</a>
-
-<br><br>
-
-<a href="logout.php">Logout</a>
-
-<br><br>
-
-<a href="download_file.php">Download Feedback File</a>
-
+<a href="download_file.php" class="button">Download Feedback File</a>
+</div>
+</div>
+</div>
 </body>
 </html>
