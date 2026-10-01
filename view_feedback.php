@@ -79,5 +79,9 @@ mysqli_close($conn);
 
 <a href="logout.php">Logout</a>
 
+<br><br>
+
+<a href="download_file.php">Download Feedback File</a>
+
 </body>
 </html>

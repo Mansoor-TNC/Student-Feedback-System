@@ -45,9 +45,25 @@ mysqli_stmt_bind_param(
 );
 
 if (mysqli_stmt_execute($stmt)) {
+    $file = fopen("data/feedback.txt", "a");
 
-    echo "Feedback submitted successfully!<br>";
-    echo "Your overall rating: " . $overall;
+    $feedback_text =
+        "========================================\n" .
+        "              FEEDBACK\n" .
+        "========================================\n" .
+        "Register Number: " . $reg_no . "\n" .
+        "Teaching Quality: " . $teaching . "\n" .
+        "Clarity: " . $clarity . "\n" .
+        "Course Material: " . $material . "\n" .
+        "Interaction: " . $interaction . "\n" .
+        "Overall Rating: " . $overall . "\n" .
+        "Comments: " . $comments . "\n" .
+        "Submitted: " . date("Y-m-d H:i:s") . "\n" .
+        "========================================\n\n";
+
+    fwrite($file, $feedback_text);
+
+    fclose($file);
     header("Location: view_feedback.php");
     exit();
 
